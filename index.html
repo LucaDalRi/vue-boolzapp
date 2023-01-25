@@ -19,7 +19,7 @@
                             <div class="containerImg">
                                 <img src="img/avatar_io.jpg" alt="">
                             </div>
-                            <div>
+                            <div class="username">
                                 Sofia
                             </div>
                         </div>
@@ -51,148 +51,87 @@
                         </div>
                     </div>
                     <div class="containerChat">
-                        <div class="containerSingolaChat">
+                        <div class="containerSingolaChat" v-for="(person , index) in contacts">
                             <div id="imgProfilo">
-                                <img src="img/avatar_1.jpg" alt="">
+                                <img :src="'img/avatar' + contacts[index].avatar +'.jpg'">
                             </div>
                             <div id="testiChat">
-                                <div id="username">
-                                    Michele
+                                <div class="username">
+                                    {{contacts[index].name}}
                                 </div>
-                                <div id="ultimoMsg">
-                                    Ultimo messaggio inviato
+                                <div class="ultimoMsg">
+                                    {{contacts[index].messages[0].message}}
                                 </div>
                             </div>
                             <div id="oraChat">
                                 12:00
                             </div>
                         </div>
-                        <div class="containerSingolaChat">
-                            <div id="imgProfilo">
-                                <img src="img/avatar_1.jpg" alt="">
-                            </div>
-                            <div id="testiChat">
-                                <div id="username">
-                                    Michele
-                                </div>
-                                <div id="ultimoMsg">
-                                    Ultimo messaggio inviato
-                                </div>
-                            </div>
-                            <div id="oraChat">
-                                12:00
-                            </div>
-                        </div>
-                        <div class="containerSingolaChat">
-                            <div id="imgProfilo">
-                                <img src="img/avatar_1.jpg" alt="">
-                            </div>
-                            <div id="testiChat">
-                                <div id="username">
-                                    Michele
-                                </div>
-                                <div id="ultimoMsg">
-                                    Ultimo messaggio inviato
-                                </div>
-                            </div>
-                            <div id="oraChat">
-                                12:00
-                            </div>
-                        </div>
-                        <div class="containerSingolaChat">
-                            <div id="imgProfilo">
-                                <img src="img/avatar_1.jpg" alt="">
-                            </div>
-                            <div id="testiChat">
-                                <div id="username">
-                                    Michele
-                                </div>
-                                <div id="ultimoMsg">
-                                    Ultimo messaggio inviato
-                                </div>
-                            </div>
-                            <div id="oraChat">
-                                12:00
-                            </div>
-                        </div>
-                        <div class="containerSingolaChat">
-                            <div id="imgProfilo">
-                                <img src="img/avatar_1.jpg" alt="">
-                            </div>
-                            <div id="testiChat">
-                                <div id="username">
-                                    Michele
-                                </div>
-                                <div id="ultimoMsg">
-                                    Ultimo messaggio inviato
-                                </div>
-                            </div>
-                            <div id="oraChat">
-                                12:00
-                            </div>
-                        </div>
-                        <div class="containerSingolaChat">
-                            <div id="imgProfilo">
-                                <img src="img/avatar_1.jpg" alt="">
-                            </div>
-                            <div id="testiChat">
-                                <div id="username">
-                                    Michele
-                                </div>
-                                <div id="ultimoMsg">
-                                    Ultimo messaggio inviato
-                                </div>
-                            </div>
-                            <div id="oraChat">
-                                12:00
-                            </div>
-                        </div>
-                        <div class="containerSingolaChat">
-                            <div id="imgProfilo">
-                                <img src="img/avatar_1.jpg" alt="">
-                            </div>
-                            <div id="testiChat">
-                                <div id="username">
-                                    Michele
-                                </div>
-                                <div id="ultimoMsg">
-                                    Ultimo messaggio inviato
-                                </div>
-                            </div>
-                            <div id="oraChat">
-                                12:00
-                            </div>
-                        </div>
-                        <div class="containerSingolaChat">
-                            <div id="imgProfilo">
-                                <img src="img/avatar_1.jpg" alt="">
-                            </div>
-                            <div id="testiChat">
-                                <div id="username">
-                                    Michele
-                                </div>
-                                <div id="ultimoMsg">
-                                    Ultimo messaggio inviato
-                                </div>
-                            </div>
-                            <div id="oraChat">
-                                12:00
-                            </div>
-                        </div>
-                        
-                       
                     </div>
                 </div>
 
                 <div class="containerDestro">
                     <div class="containerProfiloSelezionato">
-                        chat selezionata
+                        <div id="imgNomeDestra">
+                            <div id="immagineProfiloDestra">
+                                <img src="/img/avatar_2.jpg" alt="">
+                            </div>
+                            <div>
+                                <div class="username">Roberto</div>
+                                <div class="ultimoMsg">Ultimo accesso oggi alle 12:00</div>
+                            </div>
+                        </div>
+                        <div class="containerIcone">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <i class="fa-solid fa-paperclip"></i>
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </div>
                     </div>
                     <div class="containerChatScreen">
-                        chat box
+                        <div class="msg">
+                            <div class="msgSent">
+                                <div class="testoMsg">
+                                    Hai portato il cane?
+                                </div>
+                                <div class="orarioMsg">
+                                    12:00
+                                </div>
+                            </div>
+                        </div>
+                        <div class="msg">
+                            <div class="msgSent">
+                                <div class="testoMsg">
+                                    SonO VeraMenTE EUfoRIco!!
+                                </div>
+                                <div class="orarioMsg">
+                                    12:00
+                                </div>
+                            </div>
+                        </div>
+                        <div class="msg">
+                            <div class="msgRecived">
+                                <div class="testoMsg">
+                                    Non Ci Posso Credere!!
+                                </div>
+                                <div class="orarioMsg">
+                                    12:00
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
+                    
+                    
                     <div class="containerInputTesto">
-                        input testo
+                        <div class="emoji">
+                            <i class="fa-regular fa-face-smile"></i>
+                        </div>
+                        <div id="InputMsg">
+                            <input type="search" name="inputMessaggio" id="textMsg" placeholder="Scrivi un messaggio">
+                        </div>
+                        <div class="emoji">
+                            <i class="fa-solid fa-microphone"></i>
+                        </div>
                     </div>
                 </div>
 
