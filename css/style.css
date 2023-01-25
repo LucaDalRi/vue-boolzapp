@@ -2,4 +2,179 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body{
+    background: rgb(2,158,141) linear-gradient(180deg, rgba(2,158,141,1) 15%, rgba(217,219,212,255) 15%); 
+    height: 100vh;
+    width: 100vw;
+}
+
+.containerPrincipale{
+    width: 85vw;
+    height: 95vh;
+    margin: 25px auto;
+    display: flex;
+}
+
+/* Css della parte sinistra */
+
+.containerSinistro{
+    width: 30%;
+    height: 100%;
+}
+.containerProfilo{
+    height: 10%;
+    width: 100%;
+    background-color: #eaeaea;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.containerImgENome{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 30%;
+    font-size: 1.3em;
+}
+
+.containerImg{
+    height: 80%;
+    margin: 0 10px;
+}
+
+.containerImg img{
+    height: 100%;
+    clip-path: circle();
+}
+
+.containerIcone{
+    font-size: 1.4em;
+    color: gray;
+    margin: 0 10px;
+}
+
+.containerIcone i{
+    margin: 0 10px;
+}
+
+.containerAvvisoNotifiche{
+    height: 10%;
+    width: 100%;
+    padding: 0 10px;
+    background-color: #9cd8fd;
+    display: flex;
+    align-items: center;
+}
+
+.campanellaRotonda{
+    width: 15%;
+    height: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    color: #9cd8fd;
+    background-color: white;
+    clip-path: circle();
+    margin-right: 10px;
+}
+
+#attivaNotifiche{
+    color: gray;
+    text-decoration: underline;
+}
+
+.containerSearchBar{
+    height: 5%;
+    padding: 0 10px;
+    background-color: #f7f6f6;
+    display: flex;
+    align-items: center;
+}
+
+#divLenteSeach{
+    height: 70%;
+    width: 15%;
+    color: gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}
+
+#inputSearch{
+    background-color: white;
+    width: 85%; 
+}
+
+#inputSearch input{
+    width: 100%;
+    height: 27px;
+    border: 0px;
+}
+
+.containerChat{
+    height: 75%;
+    background-color: white;
+    padding: 0 10px;
+    padding-top: 10px;
+    overflow-y: scroll;
+}
+
+.containerSingolaChat{
+    height: calc(100% / 8) - 10px;
+    padding: 5px 0;
+    display: flex;
+}
+
+#imgProfilo{
+    width: 15%;
+    clip-path: circle();
+    margin: 0 10px;
+}
+
+#imgProfilo img{
+    width: 100%;
+}
+
+#testiChat{
+    width: 70%;
+}
+
+#username{
+    font-size: 1.4em;
+}
+
+#ultimoMsg{
+    color: gray;
+}
+
+/* Css della parte destra */
+
+.containerDestro{
+    border: 2px dashed red;
+    width: 70%;
+    height: 100%;
+}
+
+.containerProfiloSelezionato{
+    border: 2px dashed red;
+    height: 10%;
+    background-color: #eaeaea;
+}
+
+.containerChatScreen{
+    border: 2px dashed red;
+    height: 80%;
+    background-image: url(../img/mine.jpg);
+}
+
+.containerInputTesto{
+    border: 2px dashed red;
+    height: 10%;
+    background-color: #eaeaea;
 }
