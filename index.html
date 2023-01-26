@@ -51,7 +51,7 @@
                         </div>
                     </div>
                     <div class="containerChat">
-                        <div class="containerSingolaChat" v-for="(person , index) in contacts">
+                        <div class="containerSingolaChat" v-for="(person , index) in contacts" @click="setActiveChat(index)">
                             <div id="imgProfilo">
                                 <img :src="'img/avatar' + person.avatar + '.jpg'">
                             </div>
@@ -74,10 +74,10 @@
                     <div class="containerProfiloSelezionato">
                         <div id="imgNomeDestra">
                             <div id="immagineProfiloDestra">
-                                <img src="/img/avatar_2.jpg" alt="">
+                                <img :src="'img/avatar' + contacts[activeChat].avatar + '.jpg'">
                             </div>
                             <div>
-                                <div class="username">Roberto</div>
+                                <div class="username">{{contacts[activeChat].name}}</div>
                                 <div class="ultimoMsg">Ultimo accesso oggi alle 12:00</div>
                             </div>
                         </div>
@@ -88,30 +88,18 @@
                         </div>
                     </div>
                     <div class="containerChatScreen">
-                        <div class="msg">
-                            <div class="msgSent">
+                        <div class="msg" v-for="(message, index) in contacts[activeChat].messages">
+                            <div class="msgSent" v-if="contacts[activeChat].messages[index].status == 'sent'">
                                 <div class="testoMsg">
-                                    Hai portato il cane?
+                                    {{contacts[activeChat].messages[index].message}}
                                 </div>
                                 <div class="orarioMsg">
                                     12:00
                                 </div>
                             </div>
-                        </div>
-                        <div class="msg">
-                            <div class="msgSent">
+                            <div class="msgRecived" v-else="contacts[activeChat].messages[index].status == 'recived'">
                                 <div class="testoMsg">
-                                    SonO VeraMenTE EUfoRIco!!
-                                </div>
-                                <div class="orarioMsg">
-                                    12:00
-                                </div>
-                            </div>
-                        </div>
-                        <div class="msg">
-                            <div class="msgRecived">
-                                <div class="testoMsg">
-                                    Non Ci Posso Credere!!
+                                    {{contacts[activeChat].messages[index].message}}
                                 </div>
                                 <div class="orarioMsg">
                                     12:00
