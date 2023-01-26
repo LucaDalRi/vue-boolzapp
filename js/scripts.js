@@ -6,6 +6,8 @@ const { createApp } = Vue
 
       return {
         activeChat: 0,
+        inputMsg: '',
+        responseMsg: 'Ok',
         contacts: [
           {
             name: 'Michele',
@@ -186,8 +188,22 @@ const { createApp } = Vue
         this.activeChat = index
         console.log(this.activeChat)
         
+      },
+
+      userInputMsg(index){
+        if (this.inputMsg != '') {
+          this.contacts[index].messages.push({message: this.inputMsg , status: 'sent'});
+          this.inputMsg = '';
+        }
+      },
+
+      prova(index) {
+        setTimeout(() => {
+          this.contacts[index].messages.push({message: this.responseMsg , status: 'received'});
+        }, 1000);
       }
 
 
     }
+
 }).mount('#app')
