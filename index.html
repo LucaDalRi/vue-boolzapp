@@ -53,14 +53,14 @@
                     <div class="containerChat">
                         <div class="containerSingolaChat" v-for="(person , index) in contacts">
                             <div id="imgProfilo">
-                                <img :src="'img/avatar' + contacts[index].avatar +'.jpg'">
+                                <img :src="'img/avatar' + person.avatar + '.jpg'">
                             </div>
                             <div id="testiChat">
                                 <div class="username">
-                                    {{contacts[index].name}}
+                                    {{person.name}}
                                 </div>
                                 <div class="ultimoMsg">
-                                    {{contacts[index].messages[0].message}}
+                                    {{person.messages[0].message}}
                                 </div>
                             </div>
                             <div id="oraChat">
