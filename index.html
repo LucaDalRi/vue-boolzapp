@@ -47,11 +47,11 @@
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </div>
                         <div id="inputSearch">
-                            <input type="search" id="cercaChat" placeholder="Cerca o inizia una nuva chat">
+                            <input type="search" id="cercaChat" placeholder="Cerca o inizia una nuva chat" v-model="userSearch" @keyup.enter="nameSearch()">
                         </div>
                     </div>
                     <div class="containerChat">
-                        <div class="containerSingolaChat" v-for="(person , index) in contacts" @click="setActiveChat(index)">
+                        <div class="containerSingolaChat" v-for="(person , index) in contacts" @click="setActiveChat(index)" :class="{show : person.visible}">
                             <div id="imgProfilo">
                                 <img :src="'img/avatar' + person.avatar + '.jpg'">
                             </div>
@@ -90,6 +90,9 @@
                     <div class="containerChatScreen">
                         <div class="msg" v-for="(message, index) in contacts[activeChat].messages">
                             <div class="msgSent" v-if="contacts[activeChat].messages[index].status == 'sent'">
+                                <!-- <div class="prova">
+                                    <i class="fa-solid fa-trash-can"></i>  // prova trashcan
+                                </div> -->
                                 <div class="testoMsg">
                                     {{contacts[activeChat].messages[index].message}}
                                 </div>
@@ -115,7 +118,7 @@
                             <i class="fa-regular fa-face-smile"></i>
                         </div>
                         <div id="InputMsg">
-                            <input type="search" name="inputMessaggio" id="textMsg" placeholder="Scrivi un messaggio" v-model="inputMsg" @keyup.enter="userInputMsg(activeChat), prova(activeChat)">
+                            <input type="search" name="inputMessaggio" id="textMsg" placeholder="Scrivi un messaggio" v-model="inputMsg" @keyup.enter="userInputMsg(activeChat), response(activeChat)">
                         </div>
                         <div class="emoji">
                             <i class="fa-solid fa-microphone"></i>

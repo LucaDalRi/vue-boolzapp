@@ -5,9 +5,10 @@ const { createApp } = Vue
     data() {
 
       return {
-        activeChat: 0,
+        userSearch: '',
         inputMsg: '',
         responseMsg: 'Ok',
+        activeChat: 0,
         contacts: [
           {
             name: 'Michele',
@@ -184,10 +185,7 @@ const { createApp } = Vue
     methods: {
 
       setActiveChat(index) {
-
         this.activeChat = index
-        console.log(this.activeChat)
-        
       },
 
       userInputMsg(index){
@@ -197,12 +195,25 @@ const { createApp } = Vue
         }
       },
 
-      prova(index) {
+      response(index) {
         setTimeout(() => {
           this.contacts[index].messages.push({message: this.responseMsg , status: 'received'});
         }, 1000);
-      }
+      },
 
+      nameSearch() {
+      
+        for (i = 0; i < this.contacts.length ; i++) {
+
+          let position = this.contacts[i].name.toLowerCase();
+          let searchResult = position.search(this.userSearch);
+
+          if (searchResult != 0) {
+            this.contacts[i].visible = false
+          }
+        }
+        this.userSearch = '';
+      },
 
     }
 
