@@ -63,6 +63,8 @@ body{
     margin: 0 10px;
 }
 
+/* inizio container avviso notifica  */
+
 .containerAvvisoNotifiche{
     height: 10%;
     width: 100%;
@@ -89,6 +91,8 @@ body{
     color: gray;
     text-decoration: underline;
 }
+
+/* inizio container searchbar */
 
 .containerSearchBar{
     height: 5%;
@@ -118,6 +122,8 @@ body{
     height: 27px;
     border: 0px;
 }
+
+/* inizio container chats */
 
 .containerChat{
     height: 75%;
@@ -200,6 +206,7 @@ body{
     background-image: url(../img/mine.jpg);
     padding-top: 50px;
     overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .msg{
@@ -222,19 +229,6 @@ body{
     border-radius: 5px;
     position: relative;
 }
-
-.prova{
-    position: absolute;
-    width: 25%;
-    height: 100%;
-    left: 350px;
-    background-color: #d7fbb8;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5em;
-    clip-path: circle();
-}   
 
 .msgRecived{
     float: left;

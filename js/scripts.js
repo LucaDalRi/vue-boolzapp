@@ -183,24 +183,26 @@ const { createApp } = Vue
   },
 
     methods: {
-
+      // al click imposta this.activeChat all`index cliccato
       setActiveChat(index) {
         this.activeChat = index
       },
-
+      // pusha il testo scritto nell`input "Scrivi un messaggio"
       userInputMsg(index){
         if (this.inputMsg != '') {
           this.contacts[index].messages.push({message: this.inputMsg , status: 'sent'});
           this.inputMsg = '';
         }
       },
-
+      // risposta automatica con delay di 1000ms quando si scrive un messaggio
       response(index) {
         setTimeout(() => {
           this.contacts[index].messages.push({message: this.responseMsg , status: 'received'});
         }, 1000);
       },
-
+      // funzione che cerca il testo in input dall`utente e lo cerca nei nomi
+      // nell`array, se lo trova, anche parzialmente imposto la visibilità su none
+      // grazie ad una classe scritto sul DOM
       nameSearch() {
       
         for (i = 0; i < this.contacts.length ; i++) {

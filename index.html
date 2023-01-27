@@ -10,11 +10,13 @@
     </head>
     <body>
         <div id="app">
-            
+            <!-- container globale -->
             <div class="containerPrincipale">
-
+                <!-- container pricipale della parte sinistra -->
                 <div class="containerSinistro">
+                    <!-- container del profilo user con icone -->
                     <div class="containerProfilo">
+                        <!-- immagine profilo con nome e icone -->
                         <div class="containerImgENome">
                             <div class="containerImg">
                                 <img src="img/avatar_io.jpg" alt="">
@@ -29,6 +31,7 @@
                             <i class="fa-solid fa-ellipsis-vertical"></i>
                         </div>
                     </div>
+                    <!-- container parte avviso notifiche -->
                     <div class="containerAvvisoNotifiche">
                         <div class="campanellaRotonda">
                             <i class="fa-solid fa-bell-slash"></i>
@@ -42,6 +45,7 @@
                             </div>
                         </div>
                     </div>
+                    <!-- container searchbar -->
                     <div class="containerSearchBar">
                         <div id="divLenteSeach">
                             <i class="fa-solid fa-magnifying-glass"></i>
@@ -50,6 +54,7 @@
                             <input type="search" id="cercaChat" placeholder="Cerca o inizia una nuva chat" v-model="userSearch" @keyup.enter="nameSearch()">
                         </div>
                     </div>
+                    <!-- container delle chat -->
                     <div class="containerChat">
                         <div class="containerSingolaChat" v-for="(person , index) in contacts" @click="setActiveChat(index)" :class="{show : person.visible}">
                             <div id="imgProfilo">
@@ -69,8 +74,9 @@
                         </div>
                     </div>
                 </div>
-
+                <!-- parte destra  -->
                 <div class="containerDestro">
+                    <!-- container profilo selezionato con il click -->
                     <div class="containerProfiloSelezionato">
                         <div id="imgNomeDestra">
                             <div id="immagineProfiloDestra">
@@ -87,12 +93,10 @@
                             <i class="fa-solid fa-ellipsis-vertical"></i>
                         </div>
                     </div>
+                    <!-- chatbox -->
                     <div class="containerChatScreen">
                         <div class="msg" v-for="(message, index) in contacts[activeChat].messages">
                             <div class="msgSent" v-if="contacts[activeChat].messages[index].status == 'sent'">
-                                <!-- <div class="prova">
-                                    <i class="fa-solid fa-trash-can"></i>  // prova trashcan
-                                </div> -->
                                 <div class="testoMsg">
                                     {{contacts[activeChat].messages[index].message}}
                                 </div>
@@ -112,7 +116,7 @@
 
                     </div>
                     
-                    
+                    <!-- container input testo e icone  -->
                     <div class="containerInputTesto">
                         <div class="emoji">
                             <i class="fa-regular fa-face-smile"></i>
